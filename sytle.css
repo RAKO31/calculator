@@ -1,0 +1,154 @@
+/* General Reset */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+html, body {
+    height: 100%;
+    font-family: 'Arial', sans-serif;
+    background-color: #f0f4f7;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* Centering the container */
+.container {
+    background-color: #333;
+    border: 4px solid #444;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    width: 300px;
+    padding: 20px;
+    border-radius: 15px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    background: linear-gradient(145deg, #444, #555);
+    flex: 1;
+}
+
+/* Display area */
+.display {
+    background-color: #222;
+    border: 4px solid #666;
+    text-align: right; /* Horizontally center the text */
+    vertical-align: middle;
+    font-size: 2.5rem;
+    height: 60px;
+    line-height: 60px; /* Vertically center the text */
+    padding: 0 15px;
+    border-radius: 10px;
+    color: white;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
+    transition: background-color 0.3s ease;
+}
+
+/* Hover effect for display */
+.display:hover {
+    background-color: #333;
+}
+
+/* Buttons */
+button {
+    border-radius: 10px;
+    margin: 4px;
+    height: 60px;
+    font-weight: bold;
+    font-size: 1.5rem;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+/* Hover and active button states */
+button:hover {
+    transform: scale(1.05);
+}
+
+button:active {
+    transform: scale(0.98);
+}
+
+button:focus {
+    outline: none;
+}
+
+/* Operator buttons */
+.operator .op {
+    background-color: #ff8c00;
+    border: 1px solid #e07b00;
+}
+
+.operator .op:hover {
+    background-color: #e07b00;
+    box-shadow: 0 4px 10px rgba(255, 140, 0, 0.5);
+}
+
+/* Equal button */
+.equal {
+    background-color: #4caf50;
+    border: 1px solid #45a049;
+    grid-column: span 4;
+}
+
+.equal:hover {
+    background-color: #45a049;
+    box-shadow: 0 4px 10px rgba(76, 175, 80, 0.5);
+}
+
+/* Digit buttons */
+.digits .dig {
+    background-color: #f0f4f7;
+    border: 1px solid #dcdcdc;
+}
+
+.digits .dig:hover {
+    background-color: #dcdcdc;
+    box-shadow: 0 4px 10px rgba(200, 200, 200, 0.5);
+}
+
+/* Clear button */
+.clear {
+    background-color: #ff3b30;
+    border: 1px solid #e02e1b;
+    text-align: center;
+    font-size: 1.25rem;
+    font-weight: bold;
+    grid-column: span 4;
+}
+
+.clear:hover {
+    background-color: #e02e1b;
+    box-shadow: 0 4px 10px rgba(255, 59, 48, 0.5);
+}
+
+/* Layout for digits and operators */
+.operator, .digits {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 10px;
+}
+
+/* Clear button takes full width */
+.clear {
+    width: 250px;
+    grid-column: span 4;
+}
+
+/* Make the layout responsive on small screens */
+@media (max-width: 350px) {
+    .container {
+        width: 250px;
+    }
+    .display {
+        font-size: 2rem;
+        height: 50px;
+    }
+    button {
+        font-size: 1.25rem;
+        height: 50px;
+        width: 50px;
+    }
+}
